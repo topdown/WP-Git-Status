@@ -4,8 +4,6 @@ WordPress Git Status
 It requires PHP 5+, shell_exec permissions also required and is OOP style.
 ---------------------------------------
 
-`~Current Version:1.3~`
-
 Pretty straight forward, shows git status (Lets you know if any files have changed).
 
 This is a very simple plugin but is worthy of use if you use git to manage your WordPress site.
