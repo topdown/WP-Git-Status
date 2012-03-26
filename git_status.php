@@ -3,7 +3,7 @@
 Plugin Name: Git Status
 Plugin URI:
 Description: This plugin displays the current status if you are running under a git repository. The point of the plugin is to show the file status without needing to login with SSH for know reason.
-Version: 0.0.1
+Version: 1.0.0
 Author: Jeff Behnke
 Author URI: http://validwebs.com
 License: GPL2
@@ -38,7 +38,7 @@ class git_status
 	/**
 	 * @var string
 	 */
-	public $version = '0.0.1 Beta';
+	public $version = '1.0.0';
 
 
 	/**
@@ -79,7 +79,10 @@ class git_status
 				'plugin_action_links'
 			), 10, 2);
 
-			add_action('init', array($this, 'github_updater_init'));
+			add_action('init', array(
+				$this,
+				'github_updater_init'
+			));
 		}
 
 		add_action('admin_bar_menu', array(
@@ -91,6 +94,7 @@ class git_status
 
 	/**
 	 * Add a quick link to the admin bar
+	 *
 	 * @return mixed
 	 */
 	public function admin_bar_git_status()
@@ -173,7 +177,7 @@ class git_status
 			<br />
 			If you are not using Git remove the plugin as it servers no purpose.
 		</p>
-		<iframe src="<?php echo WP_CONTENT_URL; ?>/plugins/git_status/status.php" width='800px' style="min-height: 600px;"></iframe>
+		<iframe src="<?php echo WP_CONTENT_URL; ?>/plugins/WP-Git-Status/status.php" width='800px' style="min-height: 600px;"></iframe>
 
 	</div>
 	<?php
@@ -191,15 +195,15 @@ class git_status
 		{ // note the use of is_admin() to double check that this is happening in the admin
 
 			$config = array(
-				'slug' => plugin_basename(__FILE__),
-				'proper_folder_name' => 'git_status',
-				'api_url' => 'https://api.github.com/repos/topdown/WordPress-Plugins/',
-				'raw_url' => 'https://raw.github.com/topdown/WordPress-Plugins/master/git_status',
-				'github_url' => 'https://github.com/topdown/WordPress-Plugins/',
-				'zip_url' => 'https://github.com/topdown/WordPress-Plugins/zipball/master',
-				'sslverify' => true,
-				'requires' => '3.0',
-				'tested' => '3.3',
+				'slug'               => plugin_basename(__FILE__),
+				'proper_folder_name' => 'WP-Benchmark',
+				'api_url'            => 'https://api.github.com/repos/topdown/WP-Benchmark/',
+				'raw_url'            => 'https://raw.github.com/topdown/WP-Benchmark/master',
+				'github_url'         => 'https://github.com/topdown/WP-Benchmark/',
+				'zip_url'            => 'https://github.com/topdown/WP-Benchmark/zipball/master',
+				'sslverify'          => true,
+				'requires'           => '3.0',
+				'tested'             => '3.3',
 			);
 
 			new WPGitHubUpdater($config);
