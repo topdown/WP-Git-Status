@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: Git Status
+Plugin Name: WP Git Status
 Plugin URI: https://github.com/topdown/WP-Git-Status
 Description: <strong>(PHP 5+ is required)</strong> This plugin displays the current status if you are running under a git repository. The point of the plugin is to show the file status without needing to login with SSH for know reason.
 Version: 1.0.0
@@ -93,10 +93,6 @@ class git_status
 				'plugin_action_links'
 			), 10, 2);
 
-			add_action('init', array(
-				$this,
-				'github_updater_init'
-			));
 		}
 
 		add_action('admin_bar_menu', array(
@@ -197,30 +193,8 @@ class git_status
 	<?php
 	}
 
-
-	public function github_updater_init()
-	{
-
-		include_once('updater.php');
-
-		define('WP_GITHUB_FORCE_UPDATE', true);
-
-		$config = array(
-			'slug'               => plugin_basename(__FILE__),
-			'proper_folder_name' => 'WP-Git-Status',
-			'api_url'            => 'https://api.github.com/repos/topdown/WP-Git-Status',
-			'raw_url'            => 'https://raw.github.com/topdown/WP-Git-Status/master',
-			'github_url'         => 'https://github.com/topdown/WP-Git-Status',
-			'zip_url'            => 'https://github.com/topdown/WP-Git-Status/zipball/master',
-			'sslverify'          => true,
-			'requires'           => '3.0',
-			'tested'             => '3.3',
-		);
-
-		new WPGitHubUpdater($config);
-
-	}
 }
 
 // Plugin instance
 $git_status = new git_status();
+
