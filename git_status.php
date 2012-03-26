@@ -28,7 +28,7 @@ License: GPL2
 
 /**
  * This plugin displays the current status if you are running under a git repository.
- * 
+ *
  * PHP version 5 required
  *
  * Created 3/26/12, 2:14 AM
@@ -207,7 +207,7 @@ class git_status
 
 		$config = array(
 			'slug'               => plugin_basename(__FILE__),
-			'proper_folder_name' => 'WP-Git-Status',
+			'proper_folder_name' => 'wp-git-status',
 			'api_url'            => 'https://api.github.com/repos/topdown/WP-Git-Status',
 			'raw_url'            => 'https://raw.github.com/topdown/WP-Git-Status/master',
 			'github_url'         => 'https://github.com/topdown/WP-Git-Status',
