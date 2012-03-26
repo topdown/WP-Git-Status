@@ -1,4 +1,5 @@
 <?php
+
 /*
 Plugin Name: Git Status
 Plugin URI: https://github.com/topdown/WP-Git-Status
@@ -25,6 +26,19 @@ License: GPL2
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+/**
+ * This plugin displays the current status if you are running under a git repository.
+ * 
+ * PHP version 5 required
+ *
+ * Created 3/26/12, 2:14 AM
+ *
+ * @category   WordPress Plugin
+ * @package    WP Git Status - git_status.php
+ * @author     Jeff Behnke <code@validwebs.com>
+ * @copyright  2009-12 ValidWebs.com
+ * @license    GPL MIT
+ */
 class git_status
 {
 
@@ -191,24 +205,19 @@ class git_status
 
 		define('WP_GITHUB_FORCE_UPDATE', true);
 
-		if (is_admin())
-		{ // note the use of is_admin() to double check that this is happening in the admin
+		$config = array(
+			'slug'               => plugin_basename(__FILE__),
+			'proper_folder_name' => 'WP-Git-Status',
+			'api_url'            => 'https://api.github.com/repos/topdown/WP-Git-Status',
+			'raw_url'            => 'https://raw.github.com/topdown/WP-Git-Status/master',
+			'github_url'         => 'https://github.com/topdown/WP-Git-Status',
+			'zip_url'            => 'https://github.com/topdown/WP-Git-Status/zipball/master',
+			'sslverify'          => true,
+			'requires'           => '3.0',
+			'tested'             => '3.3',
+		);
 
-			$config = array(
-				'slug'               => plugin_basename(__FILE__),
-				'proper_folder_name' => 'WP-Benchmark',
-				'api_url'            => 'https://api.github.com/repos/topdown/WP-Benchmark/',
-				'raw_url'            => 'https://raw.github.com/topdown/WP-Benchmark/master',
-				'github_url'         => 'https://github.com/topdown/WP-Benchmark/',
-				'zip_url'            => 'https://github.com/topdown/WP-Benchmark/zipball/master',
-				'sslverify'          => true,
-				'requires'           => '3.0',
-				'tested'             => '3.3',
-			);
-
-			new WPGitHubUpdater($config);
-
-		}
+		new WPGitHubUpdater($config);
 
 	}
 }
