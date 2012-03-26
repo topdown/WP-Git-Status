@@ -3,7 +3,7 @@
 /*
 Plugin Name: Git Status
 Plugin URI: https://github.com/topdown/WP-Git-Status
-Description: This plugin displays the current status if you are running under a git repository. The point of the plugin is to show the file status without needing to login with SSH for know reason.
+Description: <strong>(PHP 5+ is required)</strong> This plugin displays the current status if you are running under a git repository. The point of the plugin is to show the file status without needing to login with SSH for know reason.
 Version: 1.0.0
 Author: Jeff Behnke
 Author URI: http://validwebs.com
@@ -138,7 +138,7 @@ class git_status
 	 */
 	public function plugin_action_links($links, $file)
 	{
-		if ($file == 'git_status/git_status.php')
+		if ($file == 'WP-Git-Status/git_status.php')
 		{
 			$settings_link = '<a href="options-general.php?page=' . $this->plugin_slug . '">' . __('Git Status', $this->plugin_slug) . '</a>';
 			array_unshift($links, $settings_link);
