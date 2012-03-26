@@ -207,7 +207,7 @@ class git_status
 
 		$config = array(
 			'slug'               => plugin_basename(__FILE__),
-			'proper_folder_name' => plugin_basename(__FILE__),
+			'proper_folder_name' => 'WP-Git-Status',
 			'api_url'            => 'https://api.github.com/repos/topdown/WP-Git-Status',
 			'raw_url'            => 'https://raw.github.com/topdown/WP-Git-Status/master',
 			'github_url'         => 'https://github.com/topdown/WP-Git-Status',
