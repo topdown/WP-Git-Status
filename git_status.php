@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Git Status
-Plugin URI:
+Plugin URI: https://github.com/topdown/WP-Git-Status
 Description: This plugin displays the current status if you are running under a git repository. The point of the plugin is to show the file status without needing to login with SSH for know reason.
 Version: 1.0.0
 Author: Jeff Behnke
