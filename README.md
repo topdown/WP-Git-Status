@@ -10,5 +10,5 @@ This is a very simple plugin but is worthy of use if you use git to manage your 
 
 Also includes a quick link in the Admin Bar.
 
-![Git Status](https://github.com/topdown/WordPress-Plugins/raw/master/git_status/screenshot.png?raw=true "Git Status")
+![Git Status](https://github.com/topdown/WP-Git-Status/raw/master/screenshot.png?raw=true "Git Status")
 
